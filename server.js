@@ -18,7 +18,7 @@ const jwt = require('jsonwebtoken');
 const supersecret = 'senhaqualquer';
 
 //rota1
-router.get('/getToken',(req, res)=>{
+router.get('/login',(req, res)=>{
     const jwtData = {
         email: 'llldc21@gmail.com',
         userName: 'Lucas'
@@ -41,6 +41,10 @@ router.use((req, res, next)=>{
         next()
     })
 })
+
+router.get('/', (req, res)=>{
+    res.json({message: 'Bem vindo ao CRUD'})
+});
 
 //rota2
 router.route('/usuarios')
